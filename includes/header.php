@@ -12,8 +12,9 @@
     <nav id="navigation">
         <h1>Tutorat des Carabins d'Orléans</h1>
         <a href="/">Accueil</a>
-        <a href="truc.html"><img src="icons/lock.svg" alt="[locked]">Connexion</a>
-        <a href="truc.html"><img src="icons/lock.svg" alt="[locked]">QCM d'entraînement</a>
-        <a href="truc.html"><img src="icons/lock.svg" alt="[locked]">Fiches de révision</a>
+        <a href="/">Informations</a>
+        <a href="truc.html"><img src="icons/key.svg" class="green" alt="[key]">Connexion</a>
+        <a href="truc.html"><img src="icons/lock.svg" class="red" alt="[lock]">QCM d'entraînement</a>
+        <a href="truc.html"><img src="icons/lock.svg" class="red" alt="[lock]">Fiches de révision</a>
     </nav>
 </header>

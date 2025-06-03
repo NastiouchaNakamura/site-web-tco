@@ -14,11 +14,11 @@
         <?php if(isset($_SESSION["adh"])): ?>
         <div class="user">
             <p><?= $_SESSION["adh"]->prenom ?> <?= $_SESSION["adh"]->nom ?></p>
-            <a href="/deconnexion"><img src="/icons/key.svg" class="red" alt="[key]">Déconnexion</a>
+            <a class="red" href="/deconnexion"><img src="/icons/key.svg" class="white" alt="[key]">Déconnexion</a>
         </div>
         <?php else: ?>
         <div class="user">
-            <a href="/connexion"><img src="/icons/key.svg" class="green" alt="[key]">Connexion</a>
+            <a class="green" href="/connexion"><img src="/icons/key.svg" class="white" alt="[key]">Connexion</a>
         </div>
         <?php endif ?>
         <a href="/">Accueil</a>

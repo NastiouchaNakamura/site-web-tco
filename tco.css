@@ -161,7 +161,7 @@ nav {
     position: fixed;
     top: 0;
     right: calc(-70% - 1rem);
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0 0.5rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: baseline;
@@ -174,8 +174,9 @@ nav {
 
     h1 {
         font-size: 1rem;
-        width: 100%;
+        width: calc(100% - 1rem);
         text-align: center;
+        margin: 0 1rem 0 0;
     }
 
     a {
@@ -184,8 +185,13 @@ nav {
         border-bottom: 1px solid white;
         width: 100%;
 
+        &:hover {
+            background-color: #2b2b2b;
+        }
+
         &:not(:has(img)) {
             padding-left: 1.5rem;
+            width: calc(100% - 1.5rem);
         }
 
         img {
@@ -201,6 +207,49 @@ nav {
 
             &.green {
                 filter: brightness(0) saturate(100%) invert(52%) sepia(43%) saturate(1183%) hue-rotate(73deg) brightness(85%) contrast(104%);
+            }
+
+            &.white {
+                filter: invert(1);
+            }
+        }
+    }
+
+    div.user {
+        width: calc(100% - 2px - 1rem);
+        margin: 0.5rem 1rem 0 0;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 1rem;
+        overflow: hidden;
+
+        p {
+            padding: 0.5rem 0 0.25rem 0;
+            margin: 0;
+            font-weight: 600;
+            border-bottom: 1px solid white;
+        }
+
+        a {
+            display: block;
+            padding: 0.25rem 0;
+            width: 100%;
+            border-bottom: 0;
+
+            &.green {
+                background-color: #4ba031;
+
+                &:hover {
+                    background-color: #3b8324;
+                }
+            }
+
+            &.red {
+                background-color: #e03d5d;
+
+                &:hover {
+                    background-color: #c12f4b;
+                }
             }
         }
     }

@@ -9,7 +9,7 @@ session_start();
 // Si l'on est déjà connecté
 if (isset($_SESSION["adh"])) {
     // Redirection
-    header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/espace-adherent"));
+    header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/adherent"));
     exit();
 }
 
@@ -69,7 +69,7 @@ EOF
                 $_SESSION["adh"] = $responses[0];
 
                 // Redirection
-                header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/espace-adherent"));
+                header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/adherent"));
                 exit();
             }
         }

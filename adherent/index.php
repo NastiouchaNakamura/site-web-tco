@@ -1,5 +1,5 @@
 <?php
-// Page d'espace adhérent - /espace-adherent
+// Page d'espace adhérent - /adherent
 
 $root = $_SERVER['DOCUMENT_ROOT'];
 require_once $root . "/includes/sql_request.php";

@@ -18,17 +18,17 @@
             </div>
             <a href="/">Accueil</a>
             <a href="/">Informations</a>
-            <a href="/espace-adherent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace adhérent</a>
-            <?php if($_SESSION["adh"]->referent): ?><a href="/espace-referent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace référent</a><?php endif ?>
-            <?php if($_SESSION["adh"]->bureau): ?><a href="/espace-bureau"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace bureau</a><?php endif ?>
-            <?php if($_SESSION["adh"]->superadmin): ?><a href="/espace-superadmin"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace super-admin</a><?php endif ?>
+            <a href="/adherent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace adhérent</a>
+            <?php if($_SESSION["adh"]->referent): ?><a href="/referent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace référent</a><?php endif ?>
+            <?php if($_SESSION["adh"]->bureau): ?><a href="/bureau"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace bureau</a><?php endif ?>
+            <?php if($_SESSION["adh"]->superadmin): ?><a href="/superadmin"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace super-admin</a><?php endif ?>
         <?php else: ?>
             <div class="user">
                 <a class="green" href="/connexion"><img src="/icons/key.svg" class="white" alt="[key]">Se connecter</a>
             </div>
             <a href="/">Accueil</a>
             <a href="/">Informations</a>
-            <a href="/espace-adherent"><img src="/icons/lock.svg" class="red" alt="[lock]">Espace adhérent</a>
+            <a href="/adherent"><img src="/icons/lock.svg" class="red" alt="[lock]">Espace adhérent</a>
         <?php endif ?>
     </nav>
 </header>

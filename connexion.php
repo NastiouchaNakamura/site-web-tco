@@ -36,9 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['numadh']) && isset($_P
         // Requête sur la BDD
         $responses = SqlRequest::new(<<< EOF
 SELECT
-    numadh,
-    hashpass,
-    hashsalt
+    *
 FROM
     tco_adh
 WHERE

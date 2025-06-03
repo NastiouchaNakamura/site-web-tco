@@ -89,7 +89,7 @@ EOF;
 <head>
     <?php include($root . "/includes/metadata.php"); ?>
     <?php include($root . "/includes/header_js.php"); ?>
-    <title>Connexion | TCO</title>
+    <title>Générer un lien | TCO</title>
 </head>
 <body>
 <?php include($root . "/includes/header.php"); ?>

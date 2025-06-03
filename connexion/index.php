@@ -63,6 +63,8 @@ EOF
                 // Connecté !
 
                 // Création de la session
+                session_unset();
+                session_destroy();
                 session_start(['cookie_lifetime' => 43200 /* 12h */]);
                 $_SESSION["adh"] = $responses[0];
 

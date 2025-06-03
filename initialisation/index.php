@@ -39,7 +39,7 @@ $numadh = $responses[0]->numadh;
 $validite = $responses[0]->validite;
 
 // Code d'activation périmé
-if ($validite < date("Y-m-d h:i:s", time())) {
+if ($validite < date("Y-m-d h:i:s")) {
     $message = "Le lien utilisé a expiré.";
     header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/activation?message=" . $message));
     exit();
@@ -123,7 +123,7 @@ EOF
             <input id="numadh" type="text" name="numadh" placeholder="" value="<?= $numadh ?>" readonly>
         </div>
         <div class="field">
-            <label for="pass">Mot de passe</label>
+            <label for="pass">Nouveau mot de passe</label>
             <input id="pass" type="password" name="pass" placeholder="">
         </div>
         <div class="field">

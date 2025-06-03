@@ -54,7 +54,16 @@ EOF
             $nom = $responses[0]->nom;
             $prenom = $responses[0]->prenom;
 
-            $code = "test";
+            // Préparation du code
+            $code = bin2hex(random_bytes(32));
+            $now = date("Y-m-d H:i:s", time() + 3600);
+            SqlRequest::new(<<< EOF
+INSERT INTO
+    tco_init_code
+VALUES
+    (?, ?, ?);
+EOF
+            )->execute([$code, $numadh, $now]);
 
             // Préparation de l'e-mail
             $from = "nepasrepondre@" . $_SERVER["HTTP_HOST"];
@@ -105,7 +114,7 @@ EOF;
             Ce formulaire vous enverra par e-mail un lien de (ré)-initialisation de mot de passe.
         </p>
         <p>
-            Pour des raisons de sécurité, ce lien ne sera valide que 1h après l'envoi de l'e-mail.
+            Pour des raisons de sécurité, ce lien ne sera valide que pendant 1h.
         </p>
         <div class="field">
             <label for="numadh">Numéro d'adhérent</label>

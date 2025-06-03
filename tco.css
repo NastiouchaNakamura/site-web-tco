@@ -96,10 +96,6 @@ header {
         &:hover {
             height: 2.5rem;
         }
-
-        &:active {
-            height: 2rem;
-        }
     }
 
     @media screen and (min-width: 35rem) {
@@ -136,6 +132,10 @@ header {
             .line {
                 height: 0.4rem;
                 width: 4rem;
+            }
+
+            &:hover {
+                height: 5rem;
             }
         }
     }

@@ -67,9 +67,9 @@ EOF
 
             // Préparation de l'e-mail
             $from = "nepasrepondre@" . $_SERVER["HTTP_HOST"];
-            $lien = htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/initialisation?code=$code" . $code);
+            $lien = htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/initialisation?code=$code");
 
-            $message_email = <<< EOF
+            $message_email = str_replace("\n", "<br>", <<< EOF
 Bonjour $nom $prenom,
 
 Suite à ta demande sur le site du Tutorat des Carabins d'Orléans, voici ci-dessous un lien d'initialisation ou de réinitialisation de mot de passe. Ce dernier n'est valide que pendant 1h.
@@ -81,11 +81,11 @@ Si tu n'as pas été à l'origine de cette demande, alors tu n'as rien à faire 
 Bien à toi,
 
 Le Tutorat des Carabins d'Orléans.
-EOF;
+EOF);
             $headers = "From: $from\r\nMIME-Version: 1.0\r\nContent-type: text/html; charset=utf-8\r\nX-Mailer: PHP/" . phpversion();
 
             // Envoi de l'e-mail
-            mail($email, "TCO (ré)-initialisation de mot de passe", $message_email, $headers);
+            mail($email, "TCO - (ré)-initialisation de mot de passe", $message_email, $headers);
 
             $message = "Le lien vous a bien été envoyé par e-mail. Il peut prendre quelques minutes à arriver et peut tomber dans votre boîte de spams.";
         }

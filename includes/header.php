@@ -24,7 +24,7 @@
             <?php if($_SESSION["adh"]->superadmin): ?><a href="/espace-superadmin"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace super-admin</a><?php endif ?>
         <?php else: ?>
             <div class="user">
-                <a class="green" href="/connexion"><img src="/icons/key.svg" class="white" alt="[key]">Connexion</a>
+                <a class="green" href="/connexion"><img src="/icons/key.svg" class="white" alt="[key]">Se connecter</a>
             </div>
             <a href="/">Accueil</a>
             <a href="/">Informations</a>

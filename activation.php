@@ -95,7 +95,7 @@ EOF;
 <?php include($root . "/includes/header.php"); ?>
 <main>
     <h1>Envoi d'un lien</h1>
-    <form method="post" action="/activation">
+    <form method="post" action="">
         <?php if (!empty($message)): ?>
         <p class="message">
             <?= $message ?>

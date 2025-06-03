@@ -1,5 +1,7 @@
 <?php
 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/includes/load_env.php";
+
 class SqlRequest {
     // Constructeur statique
     public static function new(string $sqlScript): SqlRequest {

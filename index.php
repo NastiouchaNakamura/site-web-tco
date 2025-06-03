@@ -5,11 +5,6 @@ $root = $_SERVER['DOCUMENT_ROOT'];
 
 session_start();
 
-// Si l'on est déjà connecté
-if (isset($_SESSION["adh"])) {
-    print_r($_SESSION["adh"]);
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">

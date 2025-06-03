@@ -6,11 +6,6 @@ require_once $root . "/includes/sql_request.php";
 
 session_start();
 
-// Si l'on est déjà connecté
-if (isset($_SESSION["adh"])) {
-    print_r($_SESSION["adh"]);
-}
-
 // Si aucun code n'est fourni.
 if (!isset($_GET["code"])) {
     // Code d'activation inexistant
@@ -129,11 +124,11 @@ EOF
         </div>
         <div class="field">
             <label for="pass">Mot de passe</label>
-            <input id="pass" type="text" name="pass" placeholder="">
+            <input id="pass" type="password" name="pass" placeholder="">
         </div>
         <div class="field">
             <label for="pass_bis">Répéter le mot de passe</label>
-            <input id="pass_bis" type="text" name="pass_bis" placeholder="">
+            <input id="pass_bis" type="password" name="pass_bis" placeholder="">
         </div>
         <div class="field">
             <input type="submit" value="Envoyer">

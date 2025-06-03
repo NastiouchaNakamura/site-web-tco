@@ -88,7 +88,7 @@ EOF
 <?php include($root . "/includes/header.php"); ?>
 <main>
     <h1>Connexion</h1>
-    <form method="post" action="/connexion">
+    <form method="post" action="">
         <?php if (!empty($message)): ?>
         <p class="message">
             <?= $message ?>

@@ -39,7 +39,7 @@ $numadh = $responses[0]->numadh;
 $validite = $responses[0]->validite;
 
 // Code d'activation périmé
-if ($validite < date("Y-m-d h:i:s")) {
+if ($validite < date("Y-m-d H:i:s")) {
     $message = "Le lien utilisé a expiré.";
     header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/activation?message=" . $message));
     exit();
@@ -97,6 +97,7 @@ EOF
         // Redirection
         $message = "Mot de passe enregistré avec succès ! Veuillez maintenant vous connecter.";
         header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion?message=" . $message));
+        exit();
     }
 }
 
@@ -112,7 +113,7 @@ EOF
 <?php include($root . "/includes/header.php"); ?>
 <main>
     <h1>Initialisation de mot de passe</h1>
-    <form method="post" action="/initialisation?code=<?= $code ?>">
+    <form method="post" action="?code=<?= $code ?>">
         <?php if (!empty($message)): ?>
         <p class="message">
             <?= $message ?>

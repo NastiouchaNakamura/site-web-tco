@@ -1,5 +1,5 @@
 <header>
-    <img src="/logo.png" alt="TCO">
+    <a href="/"><img src="/logo.png" alt="TCO"></a>
     <h1 class="short-title"><a href="/">T.C.O.</a></h1>
     <h1 class="long-title"><a href="/">Tutorat des Carabins d'Orléans</a></h1>
     <div class="space"></div>

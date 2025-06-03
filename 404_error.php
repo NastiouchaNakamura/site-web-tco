@@ -1,14 +1,9 @@
 <?php
-// Page d'accueil - /
+// Page d'erreur 404
 
-$root = $_SERVER['DOCUMENT_ROOT'];
+http_response_code(404);
+$root = $_SERVER['DOCUMENT_ROOT']
 
-session_start();
-
-// Si l'on est déjà connecté
-if (isset($_SESSION["adh"])) {
-    print_r($_SESSION["adh"]);
-}
 
 ?>
 <!DOCTYPE html>
@@ -16,14 +11,14 @@ if (isset($_SESSION["adh"])) {
 <head>
     <?php include($root . "/includes/metadata.php"); ?>
     <?php include($root . "/includes/header_js.php"); ?>
-    <title>Accueil | TCO</title>
+    <title>Erreur 404 | TCO</title>
 </head>
 <body>
 <?php include($root . "/includes/header.php"); ?>
 <main>
-    <h1>Accueil</h1>
+    <h1>Erreur 404</h1>
     <p>
-        Blablabla
+        La page ou le document n'existe pas.
     </p>
 </main>
 <?php include($root . "/includes/footer.php"); ?>

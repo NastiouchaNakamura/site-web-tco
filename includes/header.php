@@ -8,8 +8,19 @@
         <div class="line"></div>
         <div class="line"></div>
     </div>
+    <?php if(isset($_SESSION["adh"])): ?>
+    <div class="long-user">
+        <a class="avatar" href="/adherent"><img src="/icons/user.svg" class="white" alt="[user]"></a>
+        <div class="long-user-menu">
+            <p><?= $_SESSION["adh"]->prenom ?> <?= $_SESSION["adh"]->nom ?></p>
+            <a href="/deconnexion"><img src="/icons/key.svg" class="white" alt="[key]"><p>Déconnexion</p></a>
+        </div>
+    </div>
+    <?php else: ?>
+    <a class="long-connect" href="/connexion"><img src="/icons/key.svg" class="white" alt="[key]"><p>Connexion</p></a>
+    <?php endif; ?>
     <div id="curtain" onclick="quit_nav();"></div>
-    <nav id="navigation">
+    <nav class="small-nav" id="navigation">
         <h1>Tutorat des Carabins d'Orléans</h1>
         <?php if(isset($_SESSION["adh"])): ?>
             <div class="user">
@@ -32,3 +43,11 @@
         <?php endif ?>
     </nav>
 </header>
+<nav class="big-nav" id="navigation">
+    <a href="/">Accueil</a>
+    <a href="/">Informations</a>
+    <a href="/adherent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace adhérent</a>
+    <a href="/referent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace référent</a>
+    <a href="/bureau"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace bureau</a>
+    <a href="/superadmin"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace super-admin</a>
+</nav>

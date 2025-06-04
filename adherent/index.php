@@ -9,8 +9,8 @@ session_start();
 // Si l'on n'est pas connecté
 if (!isset($_SESSION["adh"])) {
     // Redirection
-    $message = "Vous n'êtes pas connecté ou votre session a expiré.";
-    header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion?message=" . $message));
+    $message = urlencode("Vous n'êtes pas connecté ou votre session a expiré.");
+    header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion?message=$message");
     exit();
 }
 

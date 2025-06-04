@@ -9,7 +9,7 @@ session_start();
 // Si aucun code n'est fourni.
 if (!isset($_GET["code"])) {
     // Code d'activation inexistant
-    header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/activation"));
+    header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/activation");
     exit();
 }
 
@@ -30,8 +30,8 @@ EOF
 
 // Code d'activation invalide
 if (empty($responses)) {
-    $message = "Le lien utilisé est invalide.";
-    header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/activation?message=" . $message));
+    $message = urlencode("Le lien utilisé est invalide.");
+    header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/activation?message=$message");
     exit();
 }
 
@@ -40,8 +40,8 @@ $validite = $responses[0]->validite;
 
 // Code d'activation périmé
 if ($validite < date("Y-m-d H:i:s")) {
-    $message = "Le lien utilisé a expiré.";
-    header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/activation?message=" . $message));
+    $message = urlencode("Le lien utilisé a expiré.");
+    header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/activation?message=$message");
     exit();
 }
 
@@ -95,8 +95,8 @@ EOF
         )->execute([$hashpass, $hashsalt, $numadh]);
 
         // Redirection
-        $message = "Mot de passe enregistré avec succès ! Veuillez maintenant vous connecter.";
-        header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion?message=" . $message));
+        $message = urlencode("Mot de passe enregistré avec succès ! Veuillez maintenant vous connecter.");
+        header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion?message=$message");
         exit();
     }
 }

@@ -8,7 +8,7 @@ session_start();
 
 // S'il n'y a pas d'ID de ressource, on renvoie vers l'accueil.
 if (!isset($_GET["id"])) {
-    header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"]));
+    header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"]);
     exit();
 }
 

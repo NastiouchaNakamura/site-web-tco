@@ -13,5 +13,5 @@ if (isset($_SESSION["adh"])) {
 
 
 // Redirection
-header('Location: ' . htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion"));
+header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion");
 exit();

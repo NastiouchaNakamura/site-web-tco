@@ -67,7 +67,7 @@ EOF
 
             // Préparation de l'e-mail
             $from = "nepasrepondre@" . $_SERVER["HTTP_HOST"];
-            $lien = htmlspecialchars((isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/initialisation?code=$code");
+            $lien = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/initialisation?code=$code";
 
             $message_email = str_replace("\n", "<br>", <<< EOF
 Bonjour $nom $prenom,

@@ -47,7 +47,7 @@
     <a href="/">Accueil</a>
     <a href="/">Informations</a>
     <a href="/adherent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace adhérent</a>
-    <a href="/referent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace référent</a>
-    <a href="/bureau"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace bureau</a>
-    <a href="/superadmin"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace super-admin</a>
+    <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->referent): ?><a href="/referent"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace référent</a><?php endif ?>
+    <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->bureau): ?><a href="/bureau"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace bureau</a><?php endif ?>
+    <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->superadmin): ?><a href="/superadmin"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Espace super-admin</a><?php endif ?>
 </nav>

@@ -47,10 +47,10 @@ EOF
 
         // Affichage du PDF
         header("Content-type:application/pdf");
-        header("'Content-disposition: inline; filename=\"$ressource->file_base_name.pdf\"");
+        header("Content-disposition: inline; filename=\"$ressource->file_name.pdf\"");
         header("content-Transfer-Encoding:binary");
         header("Accept-Ranges:bytes");
-        readfile($_SERVER['DOCUMENT_ROOT'] . "/ressource/$ressource->file_base_name.pdf");
+        readfile($_SERVER['DOCUMENT_ROOT'] . "/ressource/files/$id.pdf");
         exit();
     }
 

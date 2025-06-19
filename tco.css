@@ -163,19 +163,19 @@ header {
         .long-user {
             display: block;
             position: relative;
-            height: calc(4rem - 2px);
-            border: 1px solid white;
+            height: calc(4rem - 4px);
+            border: 2px solid white;
             border-radius: 2rem;
             overflow: hidden;
             box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
 
             a.avatar {
                 position: absolute;
-                height: calc(4rem - 2px);
+                top: -2px;
+                right: -2px;
+                height: calc(4rem - 4px);
                 width: 4rem;
-                top: -1px;
-                right: 0;
-                border: 1px solid white;
+                border: 2px solid white;
                 border-radius: 50%;
                 background-color: #ffac31;
                 overflow: hidden;
@@ -194,12 +194,12 @@ header {
                 background-color: #9e0707;
 
                 p {
-                    height: calc(1.25rem - 1px);
+                    height: calc(1.25rem - 4px);
                     width: calc(100% - 7rem);
                     padding: 0.5rem 5rem 0.25rem 2rem;
                     margin: 0;
                     font-weight: 600;
-                    border-bottom: 1px solid white;
+                    border-bottom: 2px solid white;
                     text-align: center;
                 }
 
@@ -210,7 +210,7 @@ header {
                     justify-content: left;
                     width: calc(100% - 7rem);
                     padding: 0.25rem 5rem 0.5rem 2rem;
-                    height: 1.25rem;
+                    height: calc(1.25rem - 2px);
                     border-bottom: 0;
                     background-color: #e03d5d;
 
@@ -224,6 +224,7 @@ header {
                     }
 
                     p {
+                        text-align: left;
                         height: 1.25rem;
                         width: calc(100% - 7.5rem);
                         padding: 0 0 0 0.5rem;
@@ -242,8 +243,8 @@ header {
             width: calc(7rem);
             padding: 0.5rem 1rem 0.5rem 1rem;
             background-color: #4ba031;
-            height: calc(1.5rem - 2px);
-            border: 1px solid white;
+            height: calc(1.5rem - 4px);
+            border: 2px solid white;
             border-radius: 2rem;
             overflow: hidden;
             box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);

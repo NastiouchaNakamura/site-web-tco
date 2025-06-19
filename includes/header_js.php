@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
     function toggle_nav() {
         let nav = document.getElementById('navigation');
         let curtain = document.getElementById('curtain');

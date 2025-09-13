@@ -1,5 +1,5 @@
 <header>
-    <a href="/"><img src="/logo.png" alt="TCO"></a>
+    <a href="/"><img src="/files/logo.png" alt="TCO"></a>
     <h1 class="short-title"><a href="/">T.C.O.</a></h1>
     <h1 class="long-title"><a href="/">Tutorat des Carabins d'Orléans</a></h1>
     <div class="space"></div>
@@ -31,7 +31,6 @@
             <?php endif; ?>
         </div>
         <a href="/">Accueil</a>
-        <a href="/">Contact</a>
         <a href="/qcm"><?php if(isset($_SESSION["adh"])): ?><img class="icon green unlock" alt="icon"><?php else: ?><img class="icon red lock" alt="icon"><?php endif ?>QCM</a>
         <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->referent): ?><a href="/qcm/gestion.php"><img class="icon green unlock" alt="icon">Gestion des QCM</a><?php endif ?>
         <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->bureau): ?><a href="/membres"><img class="icon green unlock" alt="icon">Gestion des membres</a><?php endif ?>
@@ -41,7 +40,6 @@
 </header>
 <nav class="big-nav" id="navigation">
     <a href="/">Accueil</a>
-    <a href="/">Contact</a>
     <a href="/qcm"><?php if(isset($_SESSION["adh"])): ?><img class="icon green unlock" alt="icon"><?php else: ?><img class="icon red lock" alt="icon"><?php endif ?>QCM</a>
     <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->referent): ?><a href="/qcm/gestion.php"><img class="icon green unlock" alt="icon">Gestion des QCM</a><?php endif ?>
     <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->bureau): ?><a href="/membres/"><img class="icon green unlock" alt="icon">Gestion des membres</a><?php endif ?>

@@ -64,6 +64,18 @@ img.icon.external {
     content:url("/icons/external.svg");
 }
 
+img.icon.sphere {
+    content:url("/icons/sphere.svg");
+}
+
+img.icon.mail {
+    content:url("/icons/mail.svg");
+}
+
+img.icon.location {
+    content:url("/icons/location.svg");
+}
+
 img.icon.black {
     filter: none;
 }
@@ -466,6 +478,80 @@ main {
 
     h1 {
         text-align: center;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * *\
+| * * * MAIN FEATURES * * * * * * * * |
+\* * * * * * * * * * * * * * * * * * */
+.image-background {
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: brightness(150%);
+    padding: 1rem 2rem;
+    margin: 0 -2rem 2rem -2rem;
+
+    h1 {
+        font-variant: all-small-caps;
+        text-shadow: 2px 2px white;
+    }
+
+    p {
+        text-align: center;
+        text-shadow: 2px 2px white;
+    }
+}
+
+.image-legend {
+    img {
+        width: calc(100% - 3px);
+        border-color: black;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 5px lightgray;
+    }
+
+    p {
+        margin-top: 0;
+        font-size: small;
+        text-align: center;
+        font-style: italic;
+    }
+}
+
+.cards-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+        width: calc(100% - 2rem - 1px);
+        margin: 0.75rem;
+        background-color: #fff7f7;
+        border-color: #efe1e1;;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px lightgray;
+
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-variant: all-small-caps;
+            margin: 0;
+
+            img {
+                height: 1rem;
+                width: 1rem;
+                margin-right: 0.25rem;
+            }
+        }
+
+        p {
+            text-align: center;
+        }
     }
 }
 

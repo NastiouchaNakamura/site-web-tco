@@ -28,15 +28,15 @@ session_start();
         <p>Le bureau du TCO pour l'année 2025-2026.</p>
     </div>
     <h1>Nous contacter</h1>
-    <div class="cards-3">
+    <div class="cards-container">
         <div class="card">
             <h2><img class="icon black mail" alt="icon">E-Mail</h2>
             <p><a href="mailto:tutocorleans@gmail.com">tutocorleans@gmail.com</a></p>
         </div>
-        <div class="card">
+        <!--<div class="card">
             <h2><img class="icon black location" alt="icon">Local</h2>
             <p>Salle ???</p>
-        </div>
+        </div>-->
         <div class="card">
             <h2><img class="icon black sphere" alt="icon">Réseaux sociaux</h2>
             <p><i>Instagram</i> : <a href="https://www.instagram.com/tco.rleans/">@tco.rleans</a></p>

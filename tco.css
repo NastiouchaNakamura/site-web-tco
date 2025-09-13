@@ -520,14 +520,15 @@ main {
     }
 }
 
-.cards-3 {
+.cards-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
     .card {
-        width: calc(100% - 2rem - 1px);
+        width: calc(30rem - 1px);
         margin: 0.75rem;
         background-color: #fff7f7;
         border-color: #efe1e1;;

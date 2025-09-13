@@ -2,8 +2,23 @@
 // Page de gestion des membres - /membres
 
 $root = $_SERVER['DOCUMENT_ROOT'];
+require_once $root . "/includes/sql_request.php";
 
 session_start();
+
+// Si l'utilisateur n'est pas connecté
+if (!isset($_SESSION["adh"]) || $_SESSION["adh"]->bureau != 1) {
+    $message = urlencode("Veuillez vous connecter.");
+    header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion?message=$message");
+    exit();
+}
+
+// Si l'utilisateur n'est pas du bureau
+elseif ($_SESSION["adh"]->bureau != 1) {
+    $message = urlencode("Vous n'avez pas les autorisations pour accéder à cette page.");
+    header('Location: ' . (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER["HTTP_HOST"] . "/connexion?message=$message");
+    exit();
+}
 
 ?>
 <!DOCTYPE html>

@@ -10,50 +10,41 @@
     </div>
     <?php if(isset($_SESSION["adh"])): ?>
     <div class="long-user">
-        <a class="avatar" href="/adherent"><img src="/icons/user.svg" class="white" alt="[user]"></a>
+        <a class="avatar" href="/adherent"><img class="icon white user" alt="icon"></a>
         <div class="long-user-menu">
             <p><?= $_SESSION["adh"]->prenom ?> <?= $_SESSION["adh"]->nom ?></p>
-            <a href="/deconnexion"><img src="/icons/key.svg" class="white" alt="[key]"><p>Déconnexion</p></a>
+            <a href="/deconnexion"><img class="icon white key" alt="icon"><p>Déconnexion</p></a>
         </div>
     </div>
     <?php else: ?>
-    <a class="long-connect" href="/connexion"><img src="/icons/key.svg" class="white" alt="[key]"><p>Connexion</p></a>
+    <a class="long-connect" href="/connexion"><img class="icon white key" alt="icon"><p>Connexion</p></a>
     <?php endif; ?>
     <div id="curtain" onclick="quit_nav();"></div>
     <nav class="small-nav" id="navigation">
         <h1>Tutorat des Carabins d'Orléans</h1>
-        <?php if(isset($_SESSION["adh"])): ?>
-            <div class="user">
+        <div class="user">
+            <?php if(isset($_SESSION["adh"])): ?>
                 <p><?= $_SESSION["adh"]->prenom ?> <?= $_SESSION["adh"]->nom ?></p>
-                <a class="red" href="/deconnexion"><img src="/icons/key.svg" class="white" alt="[key]">Déconnexion</a>
-            </div>
-            <a href="/">Accueil</a>
-            <a href="/">Informations</a>
-            <a href="/ressources"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Mes ressources</a>
-            <?php if($_SESSION["adh"]->referent): ?><a href="/ressources/gestion.php"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Gestion des ressources</a><?php endif ?>
-            <a href="/qcm"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Mes QCM</a>
-            <?php if($_SESSION["adh"]->referent): ?><a href="/qcm/gestion.php"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Gestion des QCM</a><?php endif ?>
-            <a href="/forum"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Forum</a>
-            <?php if($_SESSION["adh"]->bureau): ?><a href="/membres"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Gestion des membres</a><?php endif ?>
-        <?php else: ?>
-            <div class="user">
-                <a class="green" href="/connexion"><img src="/icons/key.svg" class="white" alt="[key]">Se connecter</a>
-            </div>
-            <a href="/">Accueil</a>
-            <a href="/">Informations</a>
-            <a href="/ressources"><img src="/icons/lock.svg" class="red" alt="[lock]">Mes ressources</a>
-            <a href="/qcm"><img src="/icons/lock.svg" class="red" alt="[lock]">Mes QCM</a>
-            <a href="/forum"><img src="/icons/lock.svg" class="red" alt="[lock]">Forum</a>
-        <?php endif ?>
+                <a class="red" href="/deconnexion"><img class="icon white key" alt="icon">Déconnexion</a>
+            <?php else: ?>
+                <a class="green" href="/connexion"><img class="icon white key" alt="icon">Se connecter</a>
+            <?php endif; ?>
+        </div>
+        <a href="/">Accueil</a>
+        <a href="/">Contact</a>
+        <a href="/qcm"><?php if(isset($_SESSION["adh"])): ?><img class="icon green unlock" alt="icon"><?php else: ?><img class="icon red lock" alt="icon"><?php endif ?>QCM</a>
+        <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->referent): ?><a href="/qcm/gestion.php"><img class="icon green unlock" alt="icon">Gestion des QCM</a><?php endif ?>
+        <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->bureau): ?><a href="/membres"><img class="icon green unlock" alt="icon">Gestion des membres</a><?php endif ?>
+        <a href="/drive"><img class="icon white external" alt="icon">Drive</a>
+        <a href="/forum"><img class="icon white external" alt="icon">Forum</a>
     </nav>
 </header>
 <nav class="big-nav" id="navigation">
     <a href="/">Accueil</a>
-    <a href="/">Informations</a>
-    <a href="/ressources"><?php if(isset($_SESSION["adh"])): ?><img src="/icons/unlock.svg" class="green" alt="[unlock]"><?php else: ?><img src="/icons/lock.svg" class="red" alt="[lock]"><?php endif ?>Mes ressources</a>
-    <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->referent): ?><a href="/ressources/gestion.php"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Gestion des ressources</a><?php endif ?>
-    <a href="/qcm"><?php if(isset($_SESSION["adh"])): ?><img src="/icons/unlock.svg" class="green" alt="[unlock]"><?php else: ?><img src="/icons/lock.svg" class="red" alt="[lock]"><?php endif ?>Mes QCM</a>
-    <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->referent): ?><a href="/qcm/gestion.php"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Gestion des QCM</a><?php endif ?>
-    <a href="/forum"><?php if(isset($_SESSION["adh"])): ?><img src="/icons/unlock.svg" class="green" alt="[unlock]"><?php else: ?><img src="/icons/lock.svg" class="red" alt="[lock]"><?php endif ?>Forum</a>
-    <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->bureau): ?><a href="/membres/"><img src="/icons/unlock.svg" class="green" alt="[unlock]">Gestion des membres</a><?php endif ?>
+    <a href="/">Contact</a>
+    <a href="/qcm"><?php if(isset($_SESSION["adh"])): ?><img class="icon green unlock" alt="icon"><?php else: ?><img class="icon red lock" alt="icon"><?php endif ?>QCM</a>
+    <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->referent): ?><a href="/qcm/gestion.php"><img class="icon green unlock" alt="icon">Gestion des QCM</a><?php endif ?>
+    <?php if(isset($_SESSION["adh"]) && $_SESSION["adh"]->bureau): ?><a href="/membres/"><img class="icon green unlock" alt="icon">Gestion des membres</a><?php endif ?>
+    <a href="/drive"><img class="icon white external" alt="icon">Drive</a>
+    <a href="/forum"><img class="icon white external" alt="icon">Forum</a>
 </nav>

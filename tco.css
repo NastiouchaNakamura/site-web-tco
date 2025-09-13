@@ -19,7 +19,7 @@ body {
     align-items: stretch;
     height: 100%;
     min-height: 100vh;
-    width: 100vw;
+    width: auto;
 }
 
 header {
@@ -39,19 +39,44 @@ footer {
 | * * * ICÔNES  * * * * * * * * * * * |
 \* * * * * * * * * * * * * * * * * * */
 
-img.black {
+img.icon.key {
+    content:url("/icons/key.svg");
+}
+
+img.icon.lock {
+    content:url("/icons/lock.svg");
+}
+
+img.icon.spinner {
+    content:url("/icons/spinner.svg");
+
+}
+
+img.icon.unlock {
+    content:url("/icons/unlock.svg");
+}
+
+img.icon.user {
+    content:url("/icons/user.svg");
+}
+
+img.icon.external {
+    content:url("/icons/external.svg");
+}
+
+img.icon.black {
     filter: none;
 }
 
-img.red {
+img.icon.red {
     filter: invert(33%) sepia(100%) saturate(6230%) hue-rotate(331deg) brightness(101%) contrast(101%);
 }
 
-img.green {
+img.icon.green {
     filter: brightness(0) saturate(100%) invert(52%) sepia(43%) saturate(1183%) hue-rotate(73deg) brightness(85%) contrast(104%);
 }
 
-img.white {
+img.icon.white {
     filter: invert(1);
 }
 
@@ -535,5 +560,128 @@ form {
 
     p.hint {
         font-size: 0.8rem;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * *\
+| * * * TABLEAU * * * * * * * * * * * |
+\* * * * * * * * * * * * * * * * * * */
+main.table-main {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: revert;
+    overflow: visible;
+}
+
+.table-container {
+    position: relative;
+    height: 100%;
+    overflow-x: auto;
+
+    table {
+        height: 100%;
+        border-collapse: collapse;
+
+        thead {
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+
+            tr {
+                background-color: #ffac31;
+
+                &:hover, &:active {
+                    background-color: #f4980f;
+                }
+
+                th {
+                    height: 2rem;
+                    text-wrap: nowrap;
+                    padding: 0.5rem;
+
+                    &:hover, &:active {
+                        background-color: #e18c0c;
+                    }
+                }
+
+                th#status_bar.synchronized {
+                    background-color: #3b8324;
+                }
+
+                th#status_bar.sending {
+                    background-color: #c6bc2a;
+                }
+
+                th#status_bar.error {
+                    background-color: #ff0000;
+                }
+
+                th#status_bar {
+                    height: 1rem;
+                    padding: 0.5rem;
+                    color: white;
+
+                    div {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        width: 100%;
+
+                        img {
+                            height: 1.25rem;
+                            width: 1.25rem;
+                        }
+
+                        p {
+                            font-style: italic;
+                            margin: 0 0 0 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+
+            tr {
+                &:nth-child(even) {
+                    background-color: #eaeaea;
+                }
+
+                &:hover, &:active {
+                    background-color: #dadada;
+                }
+
+                td {
+                    padding: 0.5rem;
+                    text-align: center;
+
+                    &:hover, &:active {
+                        background-color: #cacaca;
+                    }
+
+                    input {
+                        border: 1px solid black;
+                        border-radius: 0.4rem;
+                        outline: none;
+                        text-align: center;
+                        font-size: 1rem;
+                        line-height: 2rem;
+                        padding: 0;
+                        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12),0 3px 1px -2px rgba(0,0,0,.2);
+                    }
+
+                    input[readonly] {
+                        background-color: #eaeaea;
+                    }
+
+                    input[type="checkbox"] {
+                        outline: none;
+                        text-align: center;
+                        transform: scale(2);
+                    }
+                }
+            }
+        }
     }
 }
